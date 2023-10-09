@@ -8,7 +8,6 @@ export const globalStyles = globalCss({
   '*': {
     margin: 0,
     padding: 0,
-    font: 'inherit',
     boxSizing: 'border-box',
   },
 
@@ -18,9 +17,7 @@ export const globalStyles = globalCss({
   },
 
   'body, input, button, textarea': {
-    fontSize: '1.6rem',
-
-    fontWeight: 400,
+    font: '400 1.6rem Roboto, sans-serif',
 
     '-webkit-font-smoothing': 'antialiased',
     '-moz-osx-font-smoothing': 'grayscale',
@@ -34,11 +31,5 @@ export const globalStyles = globalCss({
 
   a: {
     textDecoration: 'none',
-
-    transition: 'transform 0.2s',
-
-    '&:hover': {
-      transform: 'scale(1.05)',
-    },
   },
 })

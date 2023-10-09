@@ -12,10 +12,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Container>
       <Header>
-        <Link href="/">
+        <Link href="/" prefetch={false}>
           <Image src={logoImg} width={166} height={62} alt="" />
         </Link>
-        <ShoppingCartLink href={`/purchase`}>
+        <ShoppingCartLink href={`/purchase`} prefetch={false}>
           <Image
             src={cartImg}
             width={26}
