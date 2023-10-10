@@ -5,19 +5,56 @@ import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 
 import sapato from '@/assets/sapato.png'
-import { Banner, HomeContainer } from '@/styles/pages/home'
+import {
+  Banner,
+  HomeContainer,
+  ProductCard,
+  ProductList,
+} from '@/styles/pages/home'
 
 export default function Home() {
-  const [ref] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    slides: { origin: 'center', perView: 1.3, spacing: 32 },
+  const [ref] = useKeenSlider<HTMLDivElement>(
+    {
+      loop: true,
+      slides: { origin: 'center', perView: 1.3, spacing: 32 },
 
-    breakpoints: {
-      '(max-width: 650px)': {
-        slides: { origin: 'center', perView: 1.2, spacing: 10 },
+      breakpoints: {
+        '(max-width: 650px)': {
+          slides: { origin: 'center', perView: 1.2, spacing: 10 },
+        },
       },
     },
-  })
+    [
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>
+        let mouseOver = false
+        function clearNextTimeout() {
+          clearTimeout(timeout)
+        }
+        function nextTimeout() {
+          clearTimeout(timeout)
+          if (mouseOver) return
+          timeout = setTimeout(() => {
+            slider.next()
+          }, 2000)
+        }
+        slider.on('created', () => {
+          slider.container.addEventListener('mouseover', () => {
+            mouseOver = true
+            clearNextTimeout()
+          })
+          slider.container.addEventListener('mouseout', () => {
+            mouseOver = false
+            nextTimeout()
+          })
+          nextTimeout()
+        })
+        slider.on('dragStarted', clearNextTimeout)
+        slider.on('animationEnded', nextTimeout)
+        slider.on('updated', nextTimeout)
+      },
+    ],
+  )
   return (
     <>
       <Head>
@@ -74,9 +111,88 @@ export default function Home() {
             <h1>Nike Air Max Plus</h1>
           </Banner>
         </article>
-        <article>
+        <ProductList>
           <h1>Nossos Modelos</h1>
-        </article>
+          <div>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+            <ProductCard href={`/product/5`} prefetch={false}>
+              <Image src={sapato} width={250} height={200} alt="" />
+              <footer>
+                <h2>Nike Air Max plus</h2>
+                <span>R$ 320</span>
+              </footer>
+            </ProductCard>
+          </div>
+        </ProductList>
       </HomeContainer>
     </>
   )
