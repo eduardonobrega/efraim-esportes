@@ -6,7 +6,7 @@ export const Container = styled('div', {})
 export const Header = styled('header', {
   width: 'min(90%, 1194px)',
   margin: '0 auto',
-  paddingTop: '5rem',
+  paddingTop: '4rem',
   marginBottom: '5rem',
 
   display: 'flex',
@@ -33,7 +33,7 @@ export const ShoppingCartLink = styled(Link, {
   width: '4.8rem',
   height: '4.8rem',
 
-  borderRadius: 5,
+  borderRadius: 16,
   transition: 'background-color 200ms',
 
   '&:hover': {

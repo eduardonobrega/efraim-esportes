@@ -4,10 +4,17 @@ import Head from 'next/head'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 
-import sapato from '@/assets/sapato.png'
+import sapato from '@/assets/sapatos/1.png'
+import sapato2 from '@/assets/sapatos/2.png'
+import sapato3 from '@/assets/sapatos/3.png'
+import sapato4 from '@/assets/sapatos/4.png'
+import sapato5 from '@/assets/sapatos/5.png'
+import sapato6 from '@/assets/sapatos/6.png'
+
 import {
   Banner,
   HomeContainer,
+  ImageContainer,
   ProductCard,
   ProductList,
 } from '@/styles/pages/home'
@@ -58,7 +65,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Home | EH Esportes</title>
       </Head>
       <HomeContainer>
         <article ref={ref} className="keen-slider">
@@ -75,7 +82,7 @@ export default function Home() {
             prefetch={false}
             className="keen-slider__slide number-slide1"
           >
-            <Image src={sapato} width={325} height={320} alt="" />
+            <Image src={sapato2} width={325} height={320} alt="" />
             <h1>Nike Air Max Plus</h1>
           </Banner>
           <Banner
@@ -83,7 +90,7 @@ export default function Home() {
             prefetch={false}
             className="keen-slider__slide number-slide1"
           >
-            <Image src={sapato} width={325} height={320} alt="" />
+            <Image src={sapato3} width={325} height={320} alt="" />
             <h1>Nike Air Max Plus</h1>
           </Banner>
           <Banner
@@ -91,7 +98,7 @@ export default function Home() {
             prefetch={false}
             className="keen-slider__slide number-slide1"
           >
-            <Image src={sapato} width={325} height={320} alt="" />
+            <Image src={sapato4} width={325} height={320} alt="" />
             <h1>Nike Air Max Plus</h1>
           </Banner>
           <Banner
@@ -99,7 +106,7 @@ export default function Home() {
             prefetch={false}
             className="keen-slider__slide number-slide1"
           >
-            <Image src={sapato} width={325} height={320} alt="" />
+            <Image src={sapato5} width={325} height={320} alt="" />
             <h1>Nike Air Max Plus</h1>
           </Banner>
           <Banner
@@ -107,7 +114,7 @@ export default function Home() {
             prefetch={false}
             className="keen-slider__slide number-slide1"
           >
-            <Image src={sapato} width={325} height={320} alt="" />
+            <Image src={sapato6} width={325} height={320} alt="" />
             <h1>Nike Air Max Plus</h1>
           </Banner>
         </article>
@@ -115,77 +122,36 @@ export default function Home() {
           <h1>Nossos Modelos</h1>
           <div>
             <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
+              <ImageContainer>
+                <Image src={sapato} width={250} height={200} alt="" />
+              </ImageContainer>
               <footer>
                 <h2>Nike Air Max plus</h2>
                 <span>R$ 320</span>
               </footer>
             </ProductCard>
             <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
+              <ImageContainer>
+                <Image src={sapato2} width={250} height={200} alt="" />
+              </ImageContainer>
               <footer>
                 <h2>Nike Air Max plus</h2>
                 <span>R$ 320</span>
               </footer>
             </ProductCard>
             <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
+              <ImageContainer>
+                <Image src={sapato3} width={250} height={200} alt="" />
+              </ImageContainer>
               <footer>
                 <h2>Nike Air Max plus</h2>
                 <span>R$ 320</span>
               </footer>
             </ProductCard>
             <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
-              <footer>
-                <h2>Nike Air Max plus</h2>
-                <span>R$ 320</span>
-              </footer>
-            </ProductCard>
-            <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
-              <footer>
-                <h2>Nike Air Max plus</h2>
-                <span>R$ 320</span>
-              </footer>
-            </ProductCard>
-            <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
-              <footer>
-                <h2>Nike Air Max plus</h2>
-                <span>R$ 320</span>
-              </footer>
-            </ProductCard>
-            <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
-              <footer>
-                <h2>Nike Air Max plus</h2>
-                <span>R$ 320</span>
-              </footer>
-            </ProductCard>
-            <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
-              <footer>
-                <h2>Nike Air Max plus</h2>
-                <span>R$ 320</span>
-              </footer>
-            </ProductCard>
-            <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
-              <footer>
-                <h2>Nike Air Max plus</h2>
-                <span>R$ 320</span>
-              </footer>
-            </ProductCard>
-            <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
-              <footer>
-                <h2>Nike Air Max plus</h2>
-                <span>R$ 320</span>
-              </footer>
-            </ProductCard>
-            <ProductCard href={`/product/5`} prefetch={false}>
-              <Image src={sapato} width={250} height={200} alt="" />
+              <ImageContainer>
+                <Image src={sapato4} width={250} height={200} alt="" />
+              </ImageContainer>
               <footer>
                 <h2>Nike Air Max plus</h2>
                 <span>R$ 320</span>

@@ -55,11 +55,15 @@ export const ProductCard = styled(Link, {
   borderRadius: 8,
   backgroundColor: '$gray100',
 
+  '&:hover img': {
+    transform: 'scale(1.2 )',
+  },
+
   img: {
-    width: '25rem',
-    height: '20rem',
-    objectFit: 'contain',
+    objectFit: 'cover',
+    objectPosition: 'center',
     margin: '0 auto',
+    transition: 'transform 300ms',
   },
 
   footer: {
@@ -75,4 +79,10 @@ export const ProductCard = styled(Link, {
       fontWeight: 500,
     },
   },
+})
+
+export const ImageContainer = styled('div', {
+  borderRadius: '8px 8px 0 0',
+
+  overflow: 'hidden',
 })
