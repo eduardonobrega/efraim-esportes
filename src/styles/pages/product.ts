@@ -62,7 +62,7 @@ export const ProductData = styled('div', {
   button: {
     backgroundColor: '$gray900',
     color: '$white',
-    fontSize: '2rem',
+    fontSize: '$lg',
     fontWeight: 700,
     letterSpacing: 1.2,
     textTransform: 'uppercase',
@@ -93,7 +93,7 @@ export const Sizes = styled('div', {
   gap: '2rem',
   label: {
     color: '$gray300',
-    fontSize: '2rem',
+    fontSize: '$lg',
     fontWeight: 500,
     width: '5rem',
     height: '5rem',
